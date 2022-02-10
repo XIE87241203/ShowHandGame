@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.xie.showhandgame.card.info.PokerCardInfo
 import com.xie.showhandgame.databinding.ViewPlayingCardBinding
 
 /**
@@ -13,6 +14,7 @@ import com.xie.showhandgame.databinding.ViewPlayingCardBinding
  */
 class PokerCardView : ConstraintLayout {
     private lateinit var binding:ViewPlayingCardBinding
+    private lateinit var cardInfo: PokerCardInfo
 
     constructor(context: Context) : super(context) {
         initView()
@@ -32,6 +34,9 @@ class PokerCardView : ConstraintLayout {
 
     private fun initView() {
         binding = ViewPlayingCardBinding.inflate(LayoutInflater.from(context), this)
+    }
 
+    fun setInfo(info: PokerCardInfo){
+        cardInfo = info
     }
 }
