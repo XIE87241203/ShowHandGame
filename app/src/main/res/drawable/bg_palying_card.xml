@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape>
+            <corners android:radius="25dp" />
+            <!-- 圆角，你也可以对不同的角设置不同的数值 -->
+            <solid android:color="@color/white" />
+            <!-- 形状的填充色 -->
+        </shape>
+    </item>
+</selector>
