@@ -35,6 +35,6 @@ class ChipView : RelativeLayout {
 
     fun setChipInfo(info:Chip){
         binding.tvValue.text = info.value.toString()
-        binding.tvValue.setBackgroundResource(info.suitIconId)
+        binding.tvValue.setBackgroundResource(info.chipBackgroundId)
     }
 }

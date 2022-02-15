@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import com.xie.showhandgame.card.info.PokerCardInfo
 import com.xie.showhandgame.databinding.ViewPokerCardBinding
 
@@ -38,5 +39,8 @@ class PokerCardView : ConstraintLayout {
 
     fun setInfo(info: PokerCardInfo) {
         cardInfo = info
+        binding.tvNum.setTextColor(ContextCompat.getColor(context,info.suit.colorId))
+        binding.tvNum.text = info.displayChar
+        binding.ivIcon.setImageResource(info.suit.suitIconId)
     }
 }

@@ -8,7 +8,7 @@ import com.xie.showhandgame.R
  * @Date 2022/2/10 16:28
  * 筹码
  */
-enum class Chip(val value: Int, @DrawableRes val suitIconId: Int) {
+enum class Chip(val value: Int, @DrawableRes val chipBackgroundId: Int) {
     oneHundred(100, R.drawable.bg_chip_blue),
     twoHundred(200, R.drawable.bg_chip_green),
     fiveHundred(500, R.drawable.bg_chip_purple),
