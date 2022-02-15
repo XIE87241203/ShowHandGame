@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginStart="-80dp"
+        android:layout_marginStart="-95dp"
         android:rotation="90">
 
         <com.xie.showhandgame.card.view.PokerCardView
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-50dp"
+        android:layout_marginTop="-60dp"
         android:rotation="180">
 
         <com.xie.showhandgame.card.view.PokerCardView
@@ -75,7 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="-80dp"
+        android:layout_marginEnd="-95dp"
         android:rotation="270">
 
         <com.xie.showhandgame.card.view.PokerCardView
@@ -109,7 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="-50dp">
+        android:layout_marginBottom="-60dp">
 
         <com.xie.showhandgame.card.view.PokerCardView
             android:layout_width="wrap_content"
