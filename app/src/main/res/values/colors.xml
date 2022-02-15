@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="card_black">#FF000000</color>
     <color name="card_red">#FF0000</color>
+    <color name="poker_border">#FFcccccc</color>
+    <color name="table_color">#285733</color>
 </resources>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/table_color">
+    <RelativeLayout
+        android:id="@+id/rl_left_pokers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="-80dp"
+        android:rotation="90">
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp" />
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp" />
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp" />
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_top_pokers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-50dp"
+        android:rotation="180">
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp" />
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp" />
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp" />
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_right_pokers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="-80dp"
+        android:rotation="270">
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp" />
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp" />
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp" />
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_my_pokers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-50dp">
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp" />
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp" />
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp" />
+
+        <com.xie.showhandgame.card.view.PokerCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.xie.showhandgame.card.info.PokerCardInfo
-import com.xie.showhandgame.databinding.ViewPlayingCardBinding
+import com.xie.showhandgame.databinding.ViewPokerCardBinding
 
 /**
  * @Author XJA87
@@ -13,7 +13,7 @@ import com.xie.showhandgame.databinding.ViewPlayingCardBinding
  * 扑克牌
  */
 class PokerCardView : ConstraintLayout {
-    private lateinit var binding:ViewPlayingCardBinding
+    private lateinit var binding: ViewPokerCardBinding
     private lateinit var cardInfo: PokerCardInfo
 
     constructor(context: Context) : super(context) {
@@ -33,10 +33,10 @@ class PokerCardView : ConstraintLayout {
     }
 
     private fun initView() {
-        binding = ViewPlayingCardBinding.inflate(LayoutInflater.from(context), this)
+        binding = ViewPokerCardBinding.inflate(LayoutInflater.from(context), this, true)
     }
 
-    fun setInfo(info: PokerCardInfo){
+    fun setInfo(info: PokerCardInfo) {
         cardInfo = info
     }
 }
