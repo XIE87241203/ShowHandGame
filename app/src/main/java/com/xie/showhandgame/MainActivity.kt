@@ -1,21 +1,21 @@
 package com.xie.showhandgame
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import com.xie.showhandgame.card.PockGroup
-import com.xie.showhandgame.show_hand_game.info.GameConfig
+import androidx.appcompat.app.AppCompatActivity
+import com.xie.showhandgame.databinding.ActivityMainBinding
+import com.xie.showhandgame.show_hand_game.GameActivity
 
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val pockGroup = PockGroup(GameConfig.MIN_POCK_NUM, GameConfig.MAX_POCK_NUM)
-        pockGroup.initPocks()
-        pockGroup.shuffle()
-        Log.i("testMsg", "onCreate: " + pockGroup.size())
+        binding.btnStartGame.setOnClickListener {
+            startActivity(Intent(this, GameActivity::class.java))
+        }
     }
 }
