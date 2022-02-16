@@ -8,7 +8,34 @@
     tools:context=".MainActivity">
 
     <com.xie.showhandgame.show_hand_game.PlayTable
+        android:id="@+id/play_table"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <Button
+        android:id="@+id/btn_test_anim_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试动画左" />
+
+    <Button
+        android:id="@+id/btn_test_anim_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_test_anim_left"
+        android:text="测试动画上" />
+
+    <Button
+        android:id="@+id/btn_test_anim_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_test_anim_top"
+        android:text="测试动画右" />
+
+    <Button
+        android:id="@+id/btn_test_anim_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_test_anim_right"
+        android:text="测试动画下" />
 </RelativeLayout>

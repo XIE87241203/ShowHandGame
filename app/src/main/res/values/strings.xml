@@ -2,4 +2,5 @@
     <string name="app_name">Show Hand</string>
     <string name="btn_start_game">开始游戏</string>
     <string name="btn_setting">设置</string>
+    <string name="ante_text">下注</string>
 </resources>

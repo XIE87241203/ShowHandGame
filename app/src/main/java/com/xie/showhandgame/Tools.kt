@@ -34,5 +34,9 @@ class Tools {
             val metrics = context.resources.displayMetrics
             return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, valueInDp, metrics)
         }
+
+        fun getRandom(max: Int, min: Int): Int {
+            return (Math.random() * (max - min + 1) + min).toInt()
+        }
     }
 }
