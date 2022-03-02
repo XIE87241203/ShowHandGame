@@ -4,7 +4,7 @@ package com.xie.showhandgame.card.info
  * @Author XJA87
  * @Date 2022/2/10 14:15
  */
-class PokerCardInfo {
+class PokerCardInfo{
     val suit: CardSuit
     val num: Int
     val displayChar: String
@@ -35,4 +35,5 @@ class PokerCardInfo {
             }
         }
     }
+
 }
