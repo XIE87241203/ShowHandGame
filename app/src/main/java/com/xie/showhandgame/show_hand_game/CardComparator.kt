@@ -137,7 +137,6 @@ class CardComparator {
         var sameNumQty = 0
         var firstCard: PokerCardInfo? = null
         for (index in cards.indices) {
-            val cardValue = getCartValue(cards[index])
 
             if (index == 0) {
                 firstCard = cards[index]
