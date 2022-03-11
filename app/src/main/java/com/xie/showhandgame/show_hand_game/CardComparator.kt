@@ -124,7 +124,6 @@ class CardComparator {
         }
 
         //组合分和牌面分
-        var flushSuit: CardSuit? = null //同花的花色
         var isFlush = true //同花
 
         var isStraight = true//顺子
@@ -132,7 +131,7 @@ class CardComparator {
         val sameNumList = ArrayList<Int>()
         val sameNumQtyList = ArrayList<Int>()
         //最大卡牌值
-        var maxCardValue = getCartValue(cards[cards.size - 1])
+        val maxCardValue = getCartValue(cards[cards.size - 1])
 
         var sameNum = -1
         var sameNumQty = 0
@@ -143,7 +142,6 @@ class CardComparator {
             if (index == 0) {
                 firstCard = cards[index]
                 sameNum = firstCard.num
-                flushSuit = firstCard.suit
             } else {
                 firstCard?.let {
                     //第二张开始循环
