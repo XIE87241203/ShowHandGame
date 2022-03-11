@@ -15,6 +15,7 @@ class CardComparatorTest {
 
     @Test
     fun compare() {
+        // TODO:
         val pockGroup = PockGroup()
         pockGroup.initPocks()
         for(j in 0 until 20){
