@@ -1,5 +1,6 @@
 package com.xie.showhandgame.show_hand_game
 
+import android.util.Log
 import com.xie.showhandgame.card.info.CardSuit
 import com.xie.showhandgame.card.info.PokerCardInfo
 
@@ -10,6 +11,8 @@ import com.xie.showhandgame.card.info.PokerCardInfo
  */
 class CardComparator {
     companion object {
+        const val TAG = "CardComparator"
+
         //同花顺牌型分
         const val COMB_STRAIGHT_FLUSH = 1000000000
 
@@ -85,14 +88,36 @@ class CardComparator {
         }
     }
 
-    fun compare(cards1: List<PokerCardInfo>, cards2: List<PokerCardInfo>) {
+    fun compare(cards1: List<PokerCardInfo>, cards2: List<PokerCardInfo>): Boolean {
         //同花顺>四条>满堂红>同花>顺子>三条>二对>单对>散牌
-        // TODO:  
+        val cards1Value = getCardsValue(cards1)
+        val cards2Value = getCardsValue(cards2)
+        if (cards1Value > cards2Value) {
+            return true
+        } else if (cards1Value == cards2Value) {
+            if (cards1Value == COMB_FLUSH) {
+                //都是同花 先比数字再比花色，需要特殊处理
+                for (i in cards1.indices) {
+                    val sub = cards1[i].num - cards2[i].num
+                    if (sub != 0) {
+                        return sub > 0
+                    }
+                }
+                //大小都一样，比花色
+                return cards1[0].suit.code > cards2[0].suit.code
+            } else {
+                val errorMsg = "比较错误-->分数为$cards1Value"
+                Log.e(TAG, errorMsg)
+                throw Exception(errorMsg)
+            }
+        } else {
+            return false
+        }
     }
 
     fun getCardsValue(cards: List<PokerCardInfo>): Int {
         if (cards.isEmpty()) return 0
-        //按数值和花色排序
+        //按数值和花色排序,小到大排
         cards.sortedBy {
             val cardComparator = CardComparator()
             cardComparator.getCartValue(it)
@@ -106,16 +131,14 @@ class CardComparator {
 
         val sameNumList = ArrayList<Int>()
         val sameNumQtyList = ArrayList<Int>()
-
-        var maxCardValue = 0
+        //最大卡牌值
+        var maxCardValue = getCartValue(cards[cards.size - 1])
 
         var sameNum = -1
         var sameNumQty = 0
         var firstCard: PokerCardInfo? = null
         for (index in cards.indices) {
             val cardValue = getCartValue(cards[index])
-            //更新最大卡牌值
-            if (cardValue > maxCardValue) maxCardValue = cardValue
 
             if (index == 0) {
                 firstCard = cards[index]
@@ -192,14 +215,43 @@ class CardComparator {
             result += COMB_FULL_HOUSE
             //相同牌型下只比数字
             result += maxSameNum
-        } else if(isFlush){
+        } else if (isFlush) {
             //同花
             result += COMB_FLUSH
+            //相同牌型下先比数字再比花色，需要特殊处理
+        } else if (isStraight) {
+            //顺子
+            result += COMB_STRAIGHT
             result += maxCardValue
-            //相同牌型下先比数字再比花色
-            // TODO:
+        } else if (maxSameNumQty == 3) {
+            //三条
+            result += COMB_THREE_OF_A_KIND
+            result += maxCardValue
+        } else if (maxSameNumQty == 2 && minSameNumQty == 2) {
+            //两对 比较对子里面最大的牌
+            var maxPairValue = 0
+            for (card in cards) {
+                if (card.num == maxSameNum && getCartValue(card) > maxPairValue) {
+                    maxPairValue = getCartValue(card)
+                }
+            }
+            result += 2 * COMB_PAIR
+            result += maxPairValue
+        } else if (maxSameNumQty == 2) {
+            //对子   比较对子里面最大的牌
+            var maxPairValue = 0
+            for (card in cards) {
+                if (card.num == maxSameNum && getCartValue(card) > maxPairValue) {
+                    maxPairValue = getCartValue(card)
+                }
+            }
+            result += COMB_PAIR
+            result += maxPairValue
+        } else {
+            //散牌
+            result += COMB_EMPTY
+            result += maxCardValue
         }
-
-
+        return result
     }
 }
